@@ -36,7 +36,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // 3. Géolocalisation
-  const country = request.geo?.country || "US";
+  const country = request.geo?.country ?? "US";
   const blockedCountries = ["CN", "KP"];
   if (
     restrictedGeoRoutes.some((r) => pathname.startsWith(r)) &&
