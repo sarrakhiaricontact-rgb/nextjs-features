@@ -25,21 +25,21 @@ Cette application démontre l'utilisation de **toutes les méthodes HTTP** :
 
 ```bash
 # 1. Créer le projet Next.js
-npx create-next-app@latest my-nextjs-demo --typescript --tailwind --app --no-src-dir
+npx create-next-app@latest route_handler_demo --typescript --tailwind
 
 # 2. Aller dans le dossier
-cd my-nextjs-demo
+cd route_handler_demo
 
 # 3. Créer la structure des dossiers
-mkdir -p app/api/posts/[id]
-mkdir -p app/api/users/[id]
-mkdir -p app/api/comments
-mkdir -p app/posts/[id]
-mkdir -p app/posts/new
-mkdir -p app/users/[id]
-mkdir -p app/comments
-mkdir -p app/components
-mkdir -p lib
+mkdir -p src/app/api/posts/[id]
+mkdir -p src/app/api/users/[id]
+mkdir -p src/app/api/comments
+mkdir -p src/app/posts/[id]
+mkdir -p src/app/posts/new
+mkdir -p src/app/users/[id]
+mkdir -p src/app/comments
+mkdir -p src/components
+mkdir -p src/lib
 
 # 4. Copier tous les fichiers fournis dans leurs dossiers respectifs
 
@@ -185,5 +185,21 @@ Cette démo utilise [JSONPlaceholder](https://jsonplaceholder.typicode.com/), un
 - `/comments` - 500 commentaires
 
 **Important :** JSONPlaceholder simule les opérations POST, PUT, PATCH, DELETE mais ne persiste pas les données réellement.
+
+## 🎯En résumé 
+
+Les route.ts sont utilisés pour toute logique backend** :
+
+- ✅ Base de données
+- ✅ APIs externes (masquer clés API)
+- ✅ Authentification/sessions
+- ✅ Paiements (Stripe, PayPal)
+- ✅ Emails/SMS
+- ✅ Uploads de fichiers
+- ✅ Webhooks
+- ✅ IA (OpenAI, etc.)
+- ✅ Traitement de données sensibles
+
+**Le principe clé :** tout ce qui ne doit pas être exposé côté client (clés API, secrets, logique business sensible) doit passer par un route.ts.
 
 **Bon apprentissage ! 🚀**
