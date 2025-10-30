@@ -186,8 +186,9 @@ Cette démo utilise [JSONPlaceholder](https://jsonplaceholder.typicode.com/), un
 
 **Important :** JSONPlaceholder simule les opérations POST, PUT, PATCH, DELETE mais ne persiste pas les données réellement.
 
-**En résumé :**
-Les route.ts sont utilisés pour toute logique backend :
+## 🎯En résumé 
+
+- Les route.ts sont utilisés pour toute logique backend :
 
 ✅ Base de données
 ✅ APIs externes (masquer clés API)
