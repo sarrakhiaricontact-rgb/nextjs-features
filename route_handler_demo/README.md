@@ -188,17 +188,17 @@ Cette démo utilise [JSONPlaceholder](https://jsonplaceholder.typicode.com/), un
 
 ## 🎯En résumé 
 
-- Les route.ts sont utilisés pour toute logique backend :
+Les route.ts sont utilisés pour toute logique backend** :
 
-✅ Base de données
-✅ APIs externes (masquer clés API)
-✅ Authentification/sessions
-✅ Paiements (Stripe, PayPal)
-✅ Emails/SMS
-✅ Uploads de fichiers
-✅ Webhooks
-✅ IA (OpenAI, etc.)
-✅ Traitement de données sensibles
+- ✅ Base de données
+- ✅ APIs externes (masquer clés API)
+- ✅ Authentification/sessions
+- ✅ Paiements (Stripe, PayPal)
+- ✅ Emails/SMS
+- ✅ Uploads de fichiers
+- ✅ Webhooks
+- ✅ IA (OpenAI, etc.)
+- ✅ Traitement de données sensibles
 
 **Le principe clé :** tout ce qui ne doit pas être exposé côté client (clés API, secrets, logique business sensible) doit passer par un route.ts.
 
