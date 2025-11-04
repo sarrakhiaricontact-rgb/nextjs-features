@@ -203,3 +203,7 @@ Les route.ts sont utilisés pour toute logique backend** :
 **Le principe clé :** tout ce qui ne doit pas être exposé côté client (clés API, secrets, logique business sensible) doit passer par un route.ts.
 
 **Bon apprentissage ! 🚀**
+
+## 📸 Aperçu
+
+![Dashboard](./demoApp.png)
