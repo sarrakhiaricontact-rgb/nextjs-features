@@ -1,35 +1,34 @@
-export default function RouterCache() {
-  return (
-    <>
-      <h1 className="text-4xl font-bold mb-6">Router Cache</h1>
-      <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mb-8">
-        Next.js has an in-memory client-side cache that stores the React Server
-        Component Payload.
-      </p>
+import Link from "next/link";
 
-      <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-        <h2 className="text-2xl font-semibold mb-4">Cache Duration</h2>
-        <ul className="space-y-2 text-gray-400">
-          <li className="flex items-start">
-            <span className="text-green-400 mr-2">•</span>
-            <span>
-              <strong>Static routes:</strong> Cached for 5 minutes
-            </span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-blue-400 mr-2">•</span>
-            <span>
-              <strong>Dynamic routes:</strong> Cached for 30 seconds
-            </span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-purple-400 mr-2">•</span>
-            <span>
-              <strong>Prefetched routes:</strong> Cached for 30 seconds
-            </span>
-          </li>
-        </ul>
+export default async function Page() {
+  return (
+    <div>
+      <h1 className="font-bold text-4xl">Client-side Router Cache</h1>
+
+      <div className="flex flex-col gap-10 mt-10 border rounded border-zinc-900 p-10">
+        <div>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque iste
+          quo facere eaque illo consectetur dignissimos id consequuntur natus,
+          laboriosam libero, mollitia delectus. Ea odit est adipisci, in
+          recusandae debitis!
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <Link
+            href="/router-cache/static-page"
+            className="border border-zinc-800 p-3 rounded cursor-pointer hover:bg-zinc-900"
+          >
+            Go to static page
+          </Link>
+
+          <Link
+            href="/router-cache/dynamic-page"
+            className="border border-zinc-800 p-3 rounded cursor-pointer hover:bg-zinc-900"
+          >
+            Go to dynamic page
+          </Link>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
