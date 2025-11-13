@@ -11,12 +11,5 @@ export default async function ProductCount(): Promise<JSX.Element> {
 
   const productCount = products?.length ?? 0;
 
-  return (
-    <div>
-      <span role="img" aria-label="package">
-        📦
-      </span>
-      {productCount} products
-    </div>
-  );
+  return <div>🗳️ {productCount} products</div>;
 }

@@ -6,7 +6,10 @@ export default async function TotalPrice(): Promise<JSX.Element> {
   // Appel d’API (dédupliqué grâce à la Request Memoization de Next.js)
   const products = await getData<Product[]>(
     "http://localhost:8000/products",
-    "TotalPrice Component"
+    "TotalPrice Component",
+    {
+      cache: "no-store", // makeit dynamlic
+    }
   );
 
   // Calcul du prix total
@@ -15,12 +18,5 @@ export default async function TotalPrice(): Promise<JSX.Element> {
     0
   );
 
-  return (
-    <div>
-      <span role="img" aria-label="money-bag">
-        💰
-      </span>
-      Total Price: ${totalPrice}
-    </div>
-  );
+  return <div>💰 Total Price: ${totalPrice}</div>;
 }
