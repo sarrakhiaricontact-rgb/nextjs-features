@@ -32,7 +32,7 @@ Ce schéma illustre le fonctionnement interne :
 - Une seconde requête identique réutilise la Promesse → **HIT**
 - La Promesse reste en mémoire uniquement durant le rendu
 
-![Request Memoization Diagram 1](./cap1.png)
+![Request Memoization Diagram 1](../../public/cap1.png)
 
 ---
 
@@ -43,7 +43,7 @@ Le second diagramme montre où la mémoïsation s’applique :
 - Dans les **composants serveurs React** : `layout.js`, `page.js`, `generateMetadata`, `generateStaticParams`
 - Pas dans les **route handlers** ni le **middleware**
 
-![Request Memoization Diagram 2](./cap2.png)
+![Request Memoization Diagram 2](../../public/cap3.png)
 
 ---
 
@@ -84,9 +84,30 @@ Le second diagramme montre où la mémoïsation s’applique :
 
 - 🔸 Utilisez toujours le `fetch()` natif de Next.js (pas axios ou node-fetch)
 - 🔸 Gardez les URLs et options identiques pour profiter de la déduplication
-- 🔸 Combinez avec `next: { revalidate }` si vous souhaitez un cache persistant :
-  ```js
-  fetch("https://api.example.com/data", {
-    next: { revalidate: 3600 }, // met en cache pendant 1h
-  });
-  ```
+- 🔸Request Memoization (mémoïsation de la Promesse) fonctionne même avec { cache: "no-cache" }, mais uniquement pendant le rendu React serveur en cours.
+- 🔸 Pour combiner mémoïsation + cache persistant, utilise next: { revalidate }.
+- 🔸 Pour forcer un fetch toujours frais, utilise cache: "no-cache".
+
+## 1️⃣ next: { revalidate: 3600 }
+
+- Active le **cache persistant** côté Next.js.
+- Les données seront **mises en cache pendant 1 heure**.
+- Utile pour **SSG/ISR** afin de réduire les requêtes répétées vers ton API.
+
+```js
+fetch("https://api.example.com/data", {
+  next: { revalidate: 3600 },
+});
+```
+
+## 2️⃣ { cache: "no-cache" }
+
+- Désactive toute mise en cache HTTP pour ce fetch().
+- Next.js ne stockera pas les données, même temporairement.
+- Chaque appel déclenchera une nouvelle requête réseau, même si une Promesse identique est en cours.
+
+```js
+fetch("https://api.example.com/data", {
+  cache: "no-cache",
+});
+```

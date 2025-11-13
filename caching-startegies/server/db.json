@@ -2,17 +2,17 @@
   "products": [
     {
       "id": "1",
-      "title": "Apple iPhone 16",
-      "price": 799
+      "title": "Apple iPhone 13",
+      "price": 1000
     },
     {
       "id": "2",
-      "title": "Apple iPhone 16 Plus",
+      "title": "Apple iPhone 14 Plus",
       "price": 899
     },
     {
       "id": "3",
-      "title": "Apple iPhone 10",
+      "title": "Apple iPhone 15",
       "price": 899
     }
   ]
