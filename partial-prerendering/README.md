@@ -55,9 +55,7 @@ Rechargez la page : - Le contenu statique apparaît instantanément\
 - Skeleton loaders pour les sections dynamiques\
 - Le contenu se charge progressivement
 
-
 ## 🎥 Démo de l’application
 
-
 Voici une démonstration en vidéo de l’application :
-![Video Demo](public/your-video.mp4)
+![Video Demo](public/demoapp.gif)
