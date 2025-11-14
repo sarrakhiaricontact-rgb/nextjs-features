@@ -23,7 +23,7 @@ Visitez : `http://localhost:3000`
 
 ### Vérification 1 : Résultat du build
 
-![npm run build](/public/build.png)
+![npm run build](./build.png)
 
 Le symbole `◐` indique que le **Partial Pre-rendering** est actif.
 
