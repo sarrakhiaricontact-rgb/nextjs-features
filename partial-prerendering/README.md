@@ -23,7 +23,7 @@ Visitez : `http://localhost:3000`
 
 ### Vérification 1 : Résultat du build
 
-![npm run build](./build.png)
+![npm run build](public/build.png)
 
 Le symbole `◐` indique que le **Partial Pre-rendering** est actif.
 
@@ -54,3 +54,10 @@ Rechargez la page : - Le contenu statique apparaît instantanément\
 
 - Skeleton loaders pour les sections dynamiques\
 - Le contenu se charge progressivement
+
+
+## 🎥 Démo de l’application
+
+
+Voici une démonstration en vidéo de l’application :
+![Video Demo](public/your-video.mp4)
